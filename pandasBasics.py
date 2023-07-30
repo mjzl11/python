@@ -1,31 +1,25 @@
 import pandas as pd
 
-# Crear un DataFrame de ejemplo
 data = {
-    'Nombre': ['Juan', 'María', 'Pedro', 'Ana', 'Luis', 'Elena'],
-    'Edad': [25, 30, 21, 28, 35, 27],
-    'Ciudad': ['Madrid', 'Barcelona', 'Sevilla', 'Valencia', 'Bilbao', 'Málaga'],
-    'Profesión': ['Ingeniero', 'Abogada', 'Estudiante', 'Médica', 'Programador', 'Arquitecta'],
-    'Salario': [4000, 3000, 2000, 4500, 5000, 3500]
+    'Name': ['Juan', 'María', 'Pedro', 'Ana', 'Luis', 'Elena'],
+    'Age': [25, 30, 21, 28, 35, 27],
+    'City': ['Madrid', 'Barcelona', 'Sevilla', 'Valencia', 'Bilbao', 'Málaga'],
+    'Job': ['Ingeniero', 'Abogada', 'Estudiante', 'Médica', 'Programador', 'Arquitecta'],
+    'Salary': [4000, 3000, 2000, 4500, 5000, 3500]
 }
 df = pd.DataFrame(data)
 
-# Mostrar el DataFrame
 print("DataFrame original:")
 print(df)
 
-# Filtrar el DataFrame por salario
-filtro_salario = df['Salario'] > 3000
-df_filtrado = df[filtro_salario]
+bigSalaries = df['Salary'] > 3000
+filteredDF = df[bigSalaries]
 
-# Mostrar el DataFrame filtrado
-print("\nDataFrame filtrado por salario:")
-print(df_filtrado)
+print("\nDataFrame ordered:")
+print(filteredDF)
 
-# Calcular la media de edad y salario
-media_edad = df['Edad'].mean()
-media_salario = df['Salario'].mean()
+averageAge = df['Edad'].mean()
+averageSalary = df['Salario'].mean()
 
-# Mostrar la media de edad y salario
-print("\nMedia de edad:", media_edad)
-print("Media de salario:", media_salario)
+print("\nAverage Age:", averageAge)
+print("Average Salary:", averageSalary)
